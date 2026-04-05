@@ -245,8 +245,11 @@ class script(object):
 
 ᴍᴇꜱꜱᴀɢᴇ : <b>{}</b>"""
     
-    CAPTION = """<b>{file_name}\n
-📤 ᴜᴘʟᴏᴀᴅᴇᴅ ʙʏ: <a href="https://t.me/SMS_Flizers">Spark X - MR Tech</a></b>"""
+    CAPTION = """<b>‣ ɴᴀᴍᴇ : </b><i>{file_name}</i>
+
+<b>‣ ꜱɪᴢᴇ : </b>{file_size}
+
+<b>🍁 ʙʏ : <a href="https://t.me/MR_Tech_Officiall">[ MR Tech Bot | Spark X ]</a></b>"""
 
     IMDB_TEMPLATE_TXT = """
 <b>🎬 ᴛɪᴛʟᴇ: <a href={url}>{title}</a>
