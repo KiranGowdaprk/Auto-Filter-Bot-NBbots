@@ -19,7 +19,7 @@ API_ID = int(environ.get('API_ID', '35057086'))
 API_HASH = environ.get('API_HASH', '344c241bb482993a8b318848421319f3')
 BOT_TOKEN = environ.get('BOT_TOKEN', "8797721372:AAF7DzRgrT2larpcZpoaTjx7A1RxDPm-n0Y")
 
-CACHE_TIME = int(environ.get('CACHE_TIME', 720))
+CACHE_TIME = int(environ.get('CACHE_TIME', 600))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 
 PICS = (environ.get('PICS', 'https://i.ibb.co/ch3n9wsf/x.jpg')).split() 
@@ -77,8 +77,8 @@ SHORTENER_WEBSITE2 = environ.get("SHORTENER_WEBSITE2", "arolinks.com")
 SHORTENER_API3 = environ.get("SHORTENER_API3", "055917691bbc26774e10e1f1dea4c828580225ec")
 SHORTENER_WEBSITE3 = environ.get("SHORTENER_WEBSITE3", "arolinks.com")
 
-TWO_VERIFY_GAP = int(environ.get('TWO_VERIFY_GAP', "54000"))
-THREE_VERIFY_GAP = int(environ.get('THREE_VERIFY_GAP', "999999"))
+TWO_VERIFY_GAP = int(environ.get('TWO_VERIFY_GAP', "7200"))
+THREE_VERIFY_GAP = int(environ.get('THREE_VERIFY_GAP', "18000"))
 
 MOVIE_UPDATE_NOTIFICATION = bool(environ.get("MOVIE_UPDATE_NOTIFICATION", False))
 NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", True))
