@@ -635,57 +635,82 @@
             el.classList.toggle('active');
         }
 
-        function isIOS() {
+
+
+
+        // Detect Device
+function isIOS() {
     return /iPhone|iPad|iPod/i.test(navigator.userAgent);
 }
 
+function isAndroid() {
+    return /Android/i.test(navigator.userAgent);
+}
+
+// Video URL
+const videoUrl = window.location.href.replace('/watch/', '/dl/');
+
+
+// VLC PLAYER
 function openVLC() {
-    const url = silentxcleanlink;
 
     if (isIOS()) {
-        window.location.href = "vlc://" + url;
-        setTimeout(() => {
-            window.location.href = "https://apps.apple.com/app/vlc-for-mobile/id650377962";
-        }, 2000);
-    } else {
-        const link = url.replace(/^https?:\/\//, "");
-        const playStoreUrl = "https://play.google.com/store/apps/details?id=org.videolan.vlc";
-        const intentUrl = `intent://${link}#Intent;scheme=https;package=org.videolan.vlc;action=android.intent.action.VIEW;type=video/*;S.browser_fallback_url=${encodeURIComponent(playStoreUrl)};end`;
-        window.location.href = intentUrl;
+
+        // iPhone VLC
+        window.location.href =
+        "vlc-x-callback://x-callback-url/stream?url=" + encodeURIComponent(videoUrl);
+
+    } else if (isAndroid()) {
+
+        // Android VLC
+        const clean = videoUrl.replace(/^https?:\/\//, "");
+
+        const intent =
+        `intent://${clean}#Intent;scheme=https;package=org.videolan.vlc;action=android.intent.action.VIEW;type=video/*;end`;
+
+        window.location.href = intent;
     }
 }
 
+
+// MX PLAYER
 function openMX() {
-    const url = silentxcleanlink;
 
     if (isIOS()) {
-        window.location.href = "mxplayer://play?url=" + encodeURIComponent(url);
-        setTimeout(() => {
-            window.location.href = "https://apps.apple.com/in/app/mx-player/id1445448544";
-        }, 2000);
-    } else {
-        const link = url.replace(/^https?:\/\//, '');
-        const playStoreUrl = "https://play.google.com/store/apps/details?id=com.mxtech.videoplayer.ad";
-        const intentUrl = `intent://${link}#Intent;scheme=https;package=com.mxtech.videoplayer.ad;action=android.intent.action.VIEW;type=video/*;S.browser_fallback_url=${encodeURIComponent(playStoreUrl)};end`;
-        window.location.href = intentUrl;
+
+        window.location.href =
+        "mxplayer://play?url=" + encodeURIComponent(videoUrl);
+
+    } else if (isAndroid()) {
+
+        const clean = videoUrl.replace(/^https?:\/\//, "");
+
+        const intent =
+        `intent://${clean}#Intent;scheme=https;package=com.mxtech.videoplayer.ad;action=android.intent.action.VIEW;type=video/*;end`;
+
+        window.location.href = intent;
     }
 }
 
+
+// PLAYIT PLAYER
 function openPlayIt() {
-    const url = silentxcleanlink;
 
     if (isIOS()) {
-        window.location.href = "playit://" + url;
-        setTimeout(() => {
-            window.location.href = "https://apps.apple.com/app/playit-video-player/id1596516996";
-        }, 2000);
-    } else {
-        const link = url.replace(/^https?:\/\//, '');
-        const playStoreUrl = "https://play.google.com/store/apps/details?id=com.playit.videoplayer";
-        const intentUrl = `intent://${link}#Intent;scheme=https;package=com.playit.videoplayer;action=android.intent.action.VIEW;type=video/*;S.browser_fallback_url=${encodeURIComponent(playStoreUrl)};end`;
-        window.location.href = intentUrl;
+
+        window.location.href = "playit://" + videoUrl;
+
+    } else if (isAndroid()) {
+
+        const clean = videoUrl.replace(/^https?:\/\//, "");
+
+        const intent =
+        `intent://${clean}#Intent;scheme=https;package=com.playit.videoplayer;action=android.intent.action.VIEW;type=video/*;end`;
+
+        window.location.href = intent;
     }
 }
+        
 
         document.addEventListener("DOMContentLoaded", () => {
             copyUrl(); 
