@@ -135,7 +135,7 @@ BAD_WORDS = [
 
 LANGUAGES = ["malayalam", "mal", "tamil", "tam", "english", "eng", "hindi", "hin", "telugu", "tel", "kannada", "kan", "gujarati", "guj", "marathi", "mar", "punjabi", "pun"]
 QUALITIES = ["360P", "", "480P", "", "560P", "", "720P", "", "1080P", "", "1440P", "", "2160P", ""]
-SEASONS = ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5", "Season 6", "Season 7", "Season 8", "Season 9", "Season 10"]
+SEASONS = ["Season 1", "S01", "Season 2", "S02", "Season 3", "S03", "Season 4", "S04", "Season 5", "S05", "Season 6", "S06", "Season 7", "S07", "Season 8", "S08", "Season 9", "S09", "Season 10", "S10"]
 
 
 PORT = int(environ.get("PORT", "8080"))
